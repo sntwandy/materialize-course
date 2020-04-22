@@ -1,3 +1,17 @@
 mixin link(name)
     li
         a(href='#')= name
+
+mixin card(title, content, imgurl,url)
+    article.col.l4.m6.s12
+        .card
+            .card-image.waves-effect.waves-block.waves-light
+                img(src=`${imgurl}`).activator
+            .card-content
+                span.card-title.grey-text.activator= title
+                    i.material-icons more_vert
+            .card-reveal
+                span.card-title.grey-text.text-darken-4= title
+                    i.material-icons.right close
+                p=content
+                a(href=`${url}`, target='_blank').waves-effect.waves-teal.btn-flat.teal.lighten-5.right Go
